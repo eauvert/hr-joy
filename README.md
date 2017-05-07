@@ -1,4 +1,4 @@
-# Joyful - HR Diary
+# Joyful - Social HR Diary/Journal
 
 Problems:
 
@@ -11,10 +11,11 @@ Problems:
    * You get demoted.
    * Meetings are canceled.
    * You get set up for failure.
+ * reasons you might not know even if you know
 
 Solution:
 
- * a social diary
+ * a social diary/journal
    * private or public
    * share with company
      * companies subscribe for a premium
@@ -25,4 +26,5 @@ Solution:
 Benefits:
 
 * monitor performance
+* connect with your company
 * external feedback
