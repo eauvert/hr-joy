@@ -1,68 +1,351 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel = "stylesheet" src = "semantic.min.css" />
+<link rel = "stylesheet" href = "semantic.min.css" />
+<!--<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>-->
+<meta http-equiv = "refresh" content = "8" />
+<style>
+body{margin: 64px 64px}
+
+.hidden{display: none}
+.official{background-color: #EEEEFF !important}
+.termination{background-color: #FFEEEE !important}
+</style>
 </head>
 <body>
 
 <script>
-var sample = {
-  "employees": {
-    "1001": {
-      "first": "Jane",
-      "last": "Doe",
-      "satisfaction": "5",
-      "personal": ""
-    },
-    "1002": {
+{
+  "users": {
+    "10001": {
       "first": "John",
       "last": "Smith",
-      "satisfaction": "2",
-      "personal": "Coworker was mean spirited."
+      "username": "jsmith123",
+      "private": "false",
+      "termination": "19293",
+      "entries": {
+        "1": {
+          "id": 0,
+          "timestamp": "1494182416332",
+          "entry": "Rough day at work today. Coworker's mean spirited personality did not help.",
+          "company": "BlipRecruiter",
+          "emotion": "1",
+          "likes": "40",
+          "termination": "3",
+          "comments": {
+            "1": {
+              "username": "rdoe8273",
+              "comment": "he sounds like a jerk",
+              "company": "ZipRecruiter"
+            },
+            "2": {
+              "username": "zip344",
+              "comment": "Oh wow. Never had any problems in my company.",
+              "company": "ZipRecruiter"
+            }
+          }
+        }
+      }
     },
-    "1003": {
-      "first": "Adrian",
-      "last": "Smith",
-      "satisfaction": "10",
-      "personal": "Happy day at work!"
-    }
+    "10002": {}
   }
 }
 </script>
 
+<img src = "title-min.png">
+
 <div id = "login" class = "ui card">
   <div class = "content">
-    <div class = "header">Login</div>
+    <div class = "header">Login</div><br />
     <form class = "ui form" action = "" method = "GET">
       <label>User: </label>
       <input name = "username" type = "text" /><br />
       
       <label>Pass: </label>
-      <input type = "password" />
+      <input type = "password" /><br /><br />
       
       <div class = "required inline field">
         <div class = "ui checkbox">
-          <input class = "hidden" type = "checkbox" required />
-          <label>I am a human</label><br />
+          <input type = "checkbox" required />
+          <label>I am a human</label>
         </div>
       </div>
       
-      <input class = "ui button" type = "submit" />
+      <a href = "javascript:alert('Well too bad.')">Forgot password.</a><br />
+      
+      <input class = "ui button" type = "submit" value = "Login" />
     </form>
   </div>
 </div>
 
-<div id = "dashboard">
+<div id = "dashboard" class = "">
   <div>
-    <div><a href = "#">Go to survey.</a></div>
-    <div><span>You have a message from your boss.</span></div>
-    <div><span>Your recent response: </span><span>Coworker was mean spirited.</span></div>
+    <div>
+      <div id = "dashboard" class = "ui card">
+        <div class = "content">
+          <div class = "description">
+            <span>Welcome </span>
+            <span id = "username">username</span>
+          </div>
+          <div class = "description">
+            <span>Company: ZipRecruiter</span>
+          </div>
+        </div>
+      </div>
+      <div id = "diary" class = "ui card">
+        <div class = "content">
+          <div class = "header">Daily entry</div><br />
+          <div class = "description">May 7, 2017</div><br />
+          <form class = "ui form" action = "" method = "GET">
+            <textarea name = "entry" required></textarea><br /><br />
+            <input class = "ui button" type = "file" /><br /><br />
+            <div class = "extra content">
+              <div class = "ui two buttons">
+                <div class = "ui white button" onclick = "document.getElementById('sharing').checked = true">Public</div>
+                <div class = "ui white button" onclick = "document.getElementById('sharing').checked = false">Private</div>
+                </div>
+            </div>
+            <input id = "sharing" name = "public" type = "checkbox" class = "hidden" class = "ui checkbox" /><br />
+            
+            <div class = "required inline field">
+               <div class = "ui checkbox">
+                <input type = "checkbox" required />
+                <label>I am a human</label>
+              </div>
+            </div><br />
+
+            <input type = "hidden" name = "username" id = "userHidden" value = "" />
+            <input class = "ui button" type = "submit" value = "Submit" />
+          </form>
+        </div>
+      </div>  
+    </div>
+    <br />
+    <div class = "ui link cards">
+      <div class = "ui card">
+        <div class = "content">
+          <div class = "right floated meta"><span>1h</span></div>
+          <img class = "ui avatar image" src = "title-min.png"><span>John Smith <small>BlipRecruiter</small></span>
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <span>Rough day at work today. Coworker's mean spirited personality did not help. >:( </span>
+          </div>
+        </div>
+        <div class = "content">
+          <span class = "right floated">
+            <i class = "heart outline like icon"></i>
+            17 likes
+          </span>
+          <i class = "comment icon"></i>
+          2 comments
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <img class = "ui avatar image" src = "https://cdn.sovereignman.com/wp-content/uploads/2012/08/Male-Portrait-Frown.jpeg">
+            <span>@theunhelpful847 <small>BlipRecruiter</small> <br /><br /> get back 2 work</span>
+          </div>
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <img class = "ui avatar image" src = "http://www.imagemaven.com/wp-content/uploads/2012/01/portrait-sample-3.jpg">
+            <span>@rdoe8273 <small>ZipRecruiter</small> <br /><br /> Never had any bad coworkers.</span>
+          </div>
+        </div>
+        <div class = "extra content">
+          <div class = "ui large transparent left icon input">
+            <i class = "heart outline icon"></i>
+            <input type = "text" placeholder = "Add Comment...">
+          </div>
+        </div>
+      </div>
+
+      <div class = "ui termination card">
+        <div class = "content">
+          <div class = "right floated meta"><span>11h</span></div>
+          <img class = "ui avatar image" src = "http://www.birdytoldme.com/wp-content/uploads/2016/04/Johnny-e1461964892590.jpg"><span>Jack Torrance <small>BlipRecruiter</small></span>
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <span>whelp. fired</span>
+          </div>
+        </div>
+        <div class = "content">
+          <span class = "right floated">
+            <i class = "heart outline like icon"></i>
+            2 likes
+          </span>
+          <i class = "comment icon"></i>
+          2 comments
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <img class = "ui avatar image" src = "http://www.imagemaven.com/wp-content/uploads/2012/01/portrait-sample-3.jpg">
+            <span>@rdoe8273 <small>ZipRecruiter</small> <br /><br /> Told you not to slack off.</span>
+          </div>
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <img class = "ui avatar image" src = "http://www.birdytoldme.com/wp-content/uploads/2016/04/Johnny-e1461964892590.jpg">
+            <span>@heeeresjohnny23 <small>BlipRecruiter</small> <br /><br /> what? i offered to repay his door</span>
+          </div>
+        </div>
+        <div class = "extra content">
+          <div class = "ui large transparent left icon input">
+            <i class = "heart outline icon"></i>
+            <input type = "text" placeholder = "Add Comment...">
+          </div>
+        </div>
+      </div>
+
+      <div class = "ui card">
+        <div class = "content">
+          <div class = "right floated meta"><span>16h</span></div>
+          <img class = "ui avatar image" src = "http://www.birdytoldme.com/wp-content/uploads/2016/04/Johnny-e1461964892590.jpg"><span>Jack Torrance <small>BlipRecruiter</small></span>
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <span>wrote "boss sux" with my ax on the bathroom door today. lol</span>
+          </div>
+        </div>
+        <div class = "content">
+          <span class = "right floated">
+            <i class = "heart outline like icon"></i>
+            2 likes
+          </span>
+          <i class = "comment icon"></i>
+          2 comments
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <img class = "ui avatar image" src = "http://www.imagemaven.com/wp-content/uploads/2012/01/portrait-sample-3.jpg">
+            <span>@rdoe8273 <small>ZipRecruiter</small> <br /><br /> Careful. That can get you terminated.</span>
+          </div>
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <img class = "ui avatar image" src = "http://www.birdytoldme.com/wp-content/uploads/2016/04/Johnny-e1461964892590.jpg">
+            <span>@heeeresjohnny23 <small>BlipRecruiter</small> <br /><br /> no u</span>
+          </div>
+        </div>
+        <div class = "extra content">
+          <div class = "ui large transparent left icon input">
+            <i class = "heart outline icon"></i>
+            <input type = "text" placeholder = "Add Comment...">
+          </div>
+        </div>
+      </div>
+
+      
+      <div class = "ui official card">
+        <div class = "content">
+          <div class = "right floated meta"><span>16h</span></div>
+          <img class = "ui avatar image" src = "https://images-na.ssl-images-amazon.com/images/I/41PxhFG1VTL.png"><span>Zip Recruiter Official <small>ZipRecruiter</small></span>
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <span>Congrats to our employee of the month @rdoe8273!</span>
+          </div>
+        </div>
+        <div class = "content">
+          <span class = "right floated">
+            <i class = "heart outline like icon"></i>
+            40 likes
+          </span>
+          <i class = "comment icon"></i>
+          4 comments
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <img class = "ui avatar image" src = "http://www.imagemaven.com/wp-content/uploads/2012/01/portrait-sample-3.jpg">
+            <span>@rdoe8273 <small>ZipRecruiter</small> <br /><br /> Thank you!</span>
+          </div>
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <img class = "ui avatar image" src = "https://cdn.sovereignman.com/wp-content/uploads/2012/08/Male-Portrait-Frown.jpeg">
+            <span>@theunhelpful847 <small>BlipRecruiter</small> <br /><br /> get back 2 work</span>
+          </div>
+        </div>
+        <div class = "extra content">
+          <div class = "ui large transparent left icon input">
+            <i class = "heart outline icon"></i>
+            <input type = "text" placeholder = "Add Comment...">
+          </div>
+        </div>
+      </div>
+
+      <div class = "ui card">
+        <div class = "content">
+          <div class = "right floated meta"><span>2d</span></div>
+          <img class = "ui avatar image" src = "http://www.imagemaven.com/wp-content/uploads/2012/01/portrait-sample-3.jpg"><span>@rdoe8273 <small>ZipRecruiter</small></span>
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <span>Finished everything on my TODO list.</span>
+          </div>
+        </div>
+        <div class = "content">
+          <span class = "right floated">
+            <i class = "heart outline like icon"></i>
+            23 likes
+          </span>
+          <i class = "comment icon"></i>
+          4 comments
+        </div>
+        <div class = "official content">
+          <div class = "description">
+            <img class = "ui avatar image" src = "https://images-na.ssl-images-amazon.com/images/I/41PxhFG1VTL.png">
+            <span>Zip Recruiter Official <small>ZipRecruiter</small> <br /><br /> Good job!</span>
+          </div>
+        </div>
+        <div class = "content">
+          <div class = "description">
+            <img class = "ui avatar image" src = "https://cdn.sovereignman.com/wp-content/uploads/2012/08/Male-Portrait-Frown.jpeg">
+            <span>@theunhelpful847 <small>BlipRecruiter</small> <br /><br /> get back 2 work</span>
+          </div>
+        </div>
+        <div class = "extra content">
+          <div class = "ui large transparent left icon input">
+            <i class = "heart outline icon"></i>
+            <input type = "text" placeholder = "Add Comment...">
+          </div>
+        </div>
+    </div>
+
+    </div>
+    
     
   </div>
 </div>
 
 <script>
+var user = "";
+var entry = "";
 
+if (window.location.search.match("username")){
+  user = window.location.search.substr(window.location.search.match("username").index + 9);
+  document.getElementById("login").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
+}
+else {
+  document.getElementById("dashboard").style.display = "none";
+}
+
+if (user.length > 0){
+  document.getElementById("username").innerText = user;
+  document.getElementById("userHidden").value = user;
+}
+
+var small = document.getElementsByTagName("small")
+for (i of small){
+  if (i.innerText == "ZipRecruiter"){
+    i.onclick = function(){alert("ZipRecruiter\n\n600 employees\n0 termination\n\n")};
+  }
+  else if (i.innerText == "BlipRecruiter"){
+    i.onclick = function(){alert("BlipRecruiter\n\n200 employees\n92 termination\n\n")};
+  }
+}
 </script>
 
 </body>
