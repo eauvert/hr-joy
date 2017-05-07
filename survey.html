@@ -1,0 +1,57 @@
+<link rel = "stylesheet" src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css">
+
+<!-- DON'T COPY ANYTHING ABOVE -->
+
+        <div className = "ui card">
+          <div className = "content">
+            <div className = "header">Survey</div>
+            <div className = "description">Description</div>
+            <form className = "ui form" action = "/survey/submit" method = "POST">
+              <label>Slider 1: </label><br />
+              <input name = "satisfaction" className = "ui input" type = "range" min = "1" max = "10" /><br />
+              
+              <label>Slider 2: </label><br />
+              <input name = "satisfaction" className = "ui input" type = "range" min = "1" max = "10" /><br />
+              
+              <label>Slider 3: </label><br />
+              <input name = "satisfaction" className = "ui input" type = "range" min = "1" max = "10" /><br />
+              <br />
+              
+              <div className = "required inline field">
+                <div className = "ui checkbox">
+                  <input name = "captcha" className = "hidden" type = "checkbox" required />
+                  <label>I am a human</label><br />
+                </div>
+              </div>
+              
+              <input className = "ui button" type = "submit" />
+            </form>
+          </div>
+        </div>
+
+<!-- DON'T COPY ANYTHING BELOW -->
+
+
+  <!--
+  <label>Question 1 - radio: </label><br />
+  <label><input name = "question1" type = "radio" required />Option 1</label><br />
+  <label><input name = "question1" type = "radio" />Option 2</label><br />
+  <label><input name = "question1" type = "radio" />Option 3</label><br />
+
+  <label>Question 2 - checkbox: </label><br />
+  <label><input name = "question2" type = "checkbox" />Select 1</label><br />
+  <label><input name = "question2" type = "checkbox" />Select 2</label><br />
+  <label><input name = "question2" type = "checkbox" />Select 3</label><br />
+  <label><input name = "question2" type = "checkbox" />Select 4</label><br />
+  
+  <label>Personal response</label>
+  <textarea name = "personal" required></textarea><br />
+  -->
+
+  <script>
+    for (i of document.querySelectorAll("*")){
+    if (i.getAttribute("classname")){
+    i.setAttribute("class", i.getAttribute("classname"));
+    }
+  }
+  </script>

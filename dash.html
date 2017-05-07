@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css" />
+</head>
+<body>
+
+<script>
+var sample = {
+  "employees": {
+    "1001": {
+      "first": "Jane",
+      "last": "Doe",
+      "satisfaction": "5",
+      "personal": ""
+    },
+    "1002": {
+      "first": "John",
+      "last": "Smith",
+      "satisfaction": "2",
+      "personal": "Coworker was mean spirited."
+    },
+    "1003": {
+      "first": "Adrian",
+      "last": "Smith",
+      "satisfaction": "10",
+      "personal": "Happy day at work!"
+    }
+  }
+}
+</script>
+
+<div id = "login" class = "ui card">
+  <div class = "content">
+    <div class = "header">Login</div>
+    <form class = "ui form" action = "" method = "GET">
+      <label>User: </label>
+      <input name = "username" type = "text" /><br />
+      
+      <label>Pass: </label>
+      <input type = "password" />
+      
+      <div class = "required inline field">
+        <div class = "ui checkbox">
+          <input class = "hidden" type = "checkbox" required />
+          <label>I am a human</label><br />
+        </div>
+      </div>
+      
+      <input class = "ui button" type = "submit" />
+    </form>
+  </div>
+</div>
+
+<div id = "dashboard">
+  <div>
+    <div><a href = "#">Go to survey.</a></div>
+    <div><span>You have a message from your boss.</span></div>
+    <div><span>Your recent response: </span><span>Coworker was mean spirited.</span></div>
+    
+  </div>
+</div>
+
+<script>
+if (window.location.search.match("username"))
+
+</script>
+
+</body>
+</html>
