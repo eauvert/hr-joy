@@ -1,7 +1,28 @@
-# CSS  Distribution
+# Joyful - HR Diary
 
-This repository is automatically synced with the main [Semantic UI](https://github.com/Semantic-Org/Semantic-UI) repository to provide lightweight CSS only version of Semantic UI.
+Problems:
 
-This package **does not support theming** and includes generated CSS files of the default theme only.
+ * employees don't like termination
+ * signs of termination
+   * Your boss starts expressing unhappiness with you.
+   * You get written up.
+   * The write ups escalate.
+   * You get excluded.
+   * You get demoted.
+   * Meetings are canceled.
+   * You get set up for failure.
 
-You can view more on Semantic UI at [LearnSemantic.com](http://www.learnsemantic.com) and [Semantic-UI.com](http://www.semantic-ui.com)
+Solution:
+
+ * a social diary
+   * private or public
+   * share with company
+     * companies subscribe for a premium
+   * OR keep it to yourself
+     * 
+     * machine learning sentiment analysis
+
+Benefits:
+
+* monitor performance
+* external feedback
